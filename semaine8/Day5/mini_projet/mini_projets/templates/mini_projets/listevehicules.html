@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Liste des Vehicules </h2>
+   
+
+    <table>
+        
+        <tr>
+          <th>Type</th>
+          <th>Date de creation</th>
+          <th>Cout</th>
+          <th>Taille</th>
+          
+        </tr>
+        <tr>
+            {% if clients %} 
+           <td> {{ clients.nom }} </td>
+          <td>{{ clients.prenom }}</td>
+          <td>{{ clients.messagerie_electronique }}</td>
+          <td>{{ clients.num }}</td>
+          <td>{{ clients.adresse }}</td>
+          <td>{{ clients.ville }}</td>
+          <td>{{ clients.pays }}</td>
+        </tr>
+       
+        <a href="cars">Detail du vehicule</a>
+      </table>
+      {% endif %}
+    
+</body>
+</html>

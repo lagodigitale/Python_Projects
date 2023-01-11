@@ -1,0 +1,64 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Liste des vehicules </h2>
+
+   
+    
+    <ul>
+        <li>Cout : {{ vehicule.cout }}</li>
+        <li>Type : {{ vehicule.type }}</li>
+        <li>Taille : {{ vehicule.taille }}</li>
+        <li>Date de création : {{ vehicule.created_date }}</li>
+    </ul>
+    
+
+    <div id="container">
+      {% for vehicule in vehicules %}
+      <div class="card" data-id="{{ vehicule.type }}">
+          <h2>{{ vehicule.cout }}</h2>
+          <p>{{ vehicule.taille }}</p>
+          <p>{{ vehicule.taille }}</p>
+          <p>{{ vehicule.created_date }}</p>
+
+        </div>
+    </div>
+    {% endfor %}
+
+    
+    <div id="details" style="display: none;"></div>
+    <script>
+      
+var container = document.getElementById('container');
+container.addEventListener('click', function(event) {
+    var target = event.target;
+    while (target !== container) {
+        if (target.classList.contains('card')) {
+        showDetails(target.getAttribute('data-id'));
+        break;
+        }
+        target = target.parentNode;
+    }
+
+    </script>
+    
+    
+    
+
+    
+
+      
+    
+</body>
+</html>
